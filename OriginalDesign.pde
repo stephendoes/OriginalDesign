@@ -14,6 +14,7 @@ int armMove = 0;
 int parachuteX = 0;
 int parachuteY = 0;
 int paraTop = 0;
+
 //background variables
 int skyX = 0;
 int skyY = 0;
@@ -23,6 +24,26 @@ int cloud2x = 0;
 int cloud2y = 80;
 int cloud3x = 0;
 int cloud3y = 80;
+int birdx = 0;
+
+//bird draw
+int drawBird = function(){
+  	strokeWeight(1);
+  stroke(0);
+  fill(0);
+  //beak
+  triangle(birdx+30,birdx+100,birdx+40,birdx+105,birdx+40,birdx+95);
+  //body
+  fill(255,0,0);
+  ellipse(birdx+65,105,40,20);
+  //head
+  ellipse(birdx+45,100,18,18);
+  //eyes
+  fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+  ellipse(birdx+48,100,8,8);
+  //wings
+  //triangle(birdx+25,birdx+100,birdx+45,birdx+100,)
+  }
 
 void draw()
 
@@ -82,12 +103,10 @@ void draw()
    //sky
     
    fill(10,250,250);
-   rect(skyX+0,skyY+0,1000,3000);
+   rect(skyX+-200,skyY+0,1000,3000);
   
   //clouds
-  
-  strokeWeight(0);
-  
+   stroke(255,255,255);
    fill(215, 245, 240);
   //firstcloud
   
@@ -124,7 +143,7 @@ void draw()
   line (parachuteX+285,parachuteY+30,parachuteX+245,parachuteY-100);
   line (parachuteX+315,parachuteY+30,parachuteX+355,parachuteY-100);
   fill(0);
-  ellipse(parachuteX+300,parachuteY-100,250,100);
+  ellipse(parachuteX+300,parachuteY-200,200,200);
   
  
   noStroke();
@@ -144,5 +163,12 @@ void draw()
   line (armX+280, armY+30, armX+230, armMove);
   //right arm 
   line (armX+320, armY+30, armX+370, armMove);
+  
+
+
+  //birds
+
+  //redbird
+  drawBird();
   
 }
