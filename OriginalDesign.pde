@@ -254,8 +254,8 @@ void draw()
     head+=headSpeed;
 
   }
-  if (head>4800)
-  	text("BOOM", 100, 100, 40);
+  if (head>4500)
+  	text("BOOM", 150, 100, 40);
  if (head>5000)
  {
  
