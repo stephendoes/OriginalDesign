@@ -5,6 +5,8 @@ size(600,600);
 }
 //body variables
 int head = 0;
+int headColor =255; 
+int headSpeed = 1000;
 int bodyX = 0;
 int bodyY = 0;
 int legX= 0;
@@ -16,6 +18,7 @@ int parachuteX = 0;
 int parachuteY = 0;
 int paraTop = 0;
 int birdEye = 0;
+
 
 //background variables
 int skyX = 0;
@@ -39,6 +42,7 @@ int paraHeight = 180;
 int paraLine = 2;
 int paraSize = 200;
 int speed = 4;
+int time = 0;
 void draw()
 
 {
@@ -47,7 +51,7 @@ void draw()
  background(0);
   
   //movement
- 
+ time++;
  bodyY++;
  legY++;
  armY++;
@@ -127,7 +131,7 @@ void draw()
   rect(legX+275, legY+80,20,80,10);
   
   //head 
-  fill(200,200,200);
+  fill(255,headColor,headColor);
   ellipse(bodyX+300,bodyY+5,head+35,head+40);
   fill(0);
   //body
@@ -189,7 +193,7 @@ void draw()
      cloud2x = -300;
      cloud2y = -220;
    }
-  if (cloud3y>900)
+  if (cloud3y>800)
    {
      cloud3x = 2000;
      cloud2x = 2000;
@@ -205,6 +209,11 @@ void draw()
     birdWing=0;
     
   }
+  if (birdx<360)
+  {
+  	textSize(100);
+   	text("POP",200,100);
+  }
   if (birdx <350)
   {
     
@@ -215,6 +224,7 @@ void draw()
     birdWSpeed = 0;
     birdEye +=5000;
     birdHead +=3;
+ 
 
   }
   
@@ -238,9 +248,30 @@ void draw()
        skyY = 2000;
        
      }
-  if (cloud3x > 2200)
+  if (time > 900)
   {
-    head+=500;
+  	headColor = (int)(Math.random()*255);
+    head+=headSpeed;
+
   }
+  if (head>4800)
+  	text("BOOM", 100, 100, 40);
+ if (head>5000)
+ {
  
+ 	bodyX = -2000;
+ 	bodyX -= 2;
+ 	armX = -2000;
+ 	armY = -2000;
+ 	legX= -2000;
+ 	legY = -2000;
+ 	headSpeed =0;
+ 	head = 20;
+ 	
+ }
+
+ if (bodyX < -2200)
+ {
+ text("Rest In Peace", 50,300,100);
+ }
 }
