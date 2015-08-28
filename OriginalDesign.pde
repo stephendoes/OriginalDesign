@@ -43,6 +43,9 @@ int paraLine = 2;
 int paraSize = 200;
 int speed = 4;
 int time = 0;
+int ball = 0;
+int ballSpeed = 2;
+
 void draw()
 
 {
@@ -211,8 +214,8 @@ void draw()
   }
   if (birdx<360)
   {
-  	textSize(100);
-   	text("POP",200,100);
+    textSize(100);
+     text("POP",210,100);
   }
   if (birdx <350)
   {
@@ -248,30 +251,30 @@ void draw()
        skyY = 2000;
        
      }
+  
   if (time > 900)
   {
-  	headColor = (int)(Math.random()*255);
+    headColor = (int)(Math.random()*255);
     head+=headSpeed;
 
   }
-  if (head>4500)
-  	text("BOOM", 150, 100, 40);
+  if (head>4300)
+    text("BOOM", 150, 100, 40);
  if (head>5000)
  {
  
- 	bodyX = -2000;
- 	bodyX -= 2;
- 	armX = -2000;
- 	armY = -2000;
- 	legX= -2000;
- 	legY = -2000;
- 	headSpeed =0;
- 	head = 20;
- 	
+   bodyX = -2000;
+   bodyX -= 2;
+   armX = -2000;
+   armY = -2000;
+   legX= -2000;
+   legY = -2000;
+   headSpeed =0;
+   head = 20;
+   
  }
-
- if (bodyX < -2200)
+ if (time > 950)
  {
- text("Rest In Peace", 50,300,100);
+   text("The End",100,300,20);
  }
 }
