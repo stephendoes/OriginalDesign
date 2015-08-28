@@ -259,8 +259,8 @@ void draw()
 
   }
   if (time>900)
-  	
-    text("BOOM", 150, 100);
+  	textSize(100);
+    text("BOOM", 150, 100,10);
  if (head>5000)
  {
  
@@ -277,6 +277,6 @@ void draw()
  if (time > 950)
  {
  	textSize(100);
-   text("The End",100,300);
+   text("The End",100,300,50);
  }
 }
