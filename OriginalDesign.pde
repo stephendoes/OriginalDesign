@@ -259,7 +259,7 @@ void draw()
 
   }
   if (head>4300)
-  	textSize(100);
+  	
     text("BOOM", 150, 100);
  if (head>5000)
  {
