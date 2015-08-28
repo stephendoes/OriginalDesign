@@ -258,9 +258,7 @@ void draw()
     head+=headSpeed;
 
   }
-  if (time>900)
-  	textSize(100);
-    text("BOOM", 150, 100);
+
  if (head>5000)
  {
  
